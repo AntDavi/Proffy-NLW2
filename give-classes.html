@@ -13,7 +13,9 @@
 
     <link rel="stylesheet" href="/styles/main.css">
     
-    <link rel="stylesheet" href="/styles/partials/pageS-give-classes.css">
+    <link rel="stylesheet" href="/styles/partials/pages-give-classes.css">
+
+    <link rel="stylesheet" href="/styles/partials/forms.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -72,6 +74,36 @@
                     </div>
 
 
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sobre a aula</legend>
+
+                    <div class="select-block">
+                        <label for="subject">
+                            Matéria
+                        </label>
+                        <select name="subject" id="subject" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="1">Artes</option>
+                            <option value="2">Biologia</option>
+                            <option value="3">Ciências</option>
+                            <option value="4">Educação física</option>
+                            <option value="5">Física</option>
+                            <option value="6">Geografia</option>
+                            <option value="7">História</option>
+                            <option value="8">Matemática</option>
+                            <option value="9">Português</option>
+                            <option value="10">Química</option>
+                        </select>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="cost">Custo da sua hora/aula
+                            <small>(R$)</small>
+                        </label>
+                        <input type="cost" id="cost" type="number" required>
+                    </div>
                 </fieldset>
 
             </form>
