@@ -106,7 +106,50 @@
                     </div>
                 </fieldset>
 
+                <fieldset id="schedule-item">
+                    <legend>
+                        Horários disponíveis
+                        <button id="add-time">+ Novo Horario</button>
+
+                        <div class="schedule-item">
+                            <div class="select-block">
+                                <label for="weekday">Dia da Semana</label>
+                                <select name="weekday[]" id="weekday" required>
+                                    <option value="0">Domingo</option>
+                                    <option value="1">Segunda-Feira</option>
+                                    <option value="2">Terça-Feira</option>
+                                    <option value="3">Quarta-Feira</option>
+                                    <option value="4">Quinta-Feira</option>
+                                    <option value="5">Sexta-Feira</option>
+                                    <option value="6">Sábado</option>
+                                </select>
+                            </div>
+
+                            <div class="input-block">
+                                <label for="time_front">Das</label>
+                                <input type="time" name="time_from[]" required>
+                            </div>
+
+                            <div class="input-block">
+                                <label for="time_to">Até</label>
+                                <input type="time" name="time_to[]" required>
+                            </div>
+
+                            
+
+                        </div>
+                    </legend>
+                </fieldset>
+
             </form>
+
+            <footer>
+                <p>
+                    <img src="/images/icons/warning.svg" alt="Aviso Importante">
+                    Importante! <br> Preencha todos os dados
+                </p>
+                <button type="submit" form="create-class">Salvar cadastro</button>
+            </footer>
 
         </main>
     
