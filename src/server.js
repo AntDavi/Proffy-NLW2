@@ -4,21 +4,44 @@ const proffys = [
         avatar: "https://avatars2.githubusercontent.com/u/69051403?s=460&u=374e5e51ecc3b742364e5210d0d6c1ce1c064b23&v=4", 
         whatsapp: "85 999999999", 
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus, est auctor feugiat convallis, risus felis accumsan mi, quis tincidunt arcu mi at elit.", subject: "História", 
-        cost: "20", 
+        cost: "40", 
         weekday: [ 0 ], 
         time_from: [720], 
         time_to: [1220]
     },
     {
         name: "Ana Livia", 
-        avatar: "https://avatars2.githubusercontent.com/u/69051403?s=460&u=374e5e51ecc3b742364e5210d0d6c1ce1c064b23&v=4", 
+        avatar: "https://avatars3.githubusercontent.com/u/11712178?s=400&u=ca94c2b41198d8828f8b972facf612b8102f15b6&v=4", 
         whatsapp: "85 999999999", 
         bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus, est auctor feugiat convallis, risus felis accumsan mi, quis tincidunt arcu mi at elit.", subject: "Geografia", 
         cost: "40", 
         weekday: [ 1 ], 
         time_from: [720], 
         time_to: [1220]
+    },
+    {
+        name: "Carlos Eduardo", 
+        avatar: "https://avatars2.githubusercontent.com/u/438936?s=460&u=65310293ba27b80f817680d9079cfe9328892ed2&v=4", 
+        whatsapp: "85 999999999", 
+        bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus, est auctor feugiat convallis, risus felis accumsan mi, quis tincidunt arcu mi at elit.", subject: "Matematica", 
+        cost: "65", 
+        weekday: [ 5 ], 
+        time_from: [720], 
+        time_to: [1220]
     }
+]
+
+const subjects = [
+    "Artes",
+    "Biologia",
+    "Ciências",
+    "Educação física",
+    "Física",
+    "Geografia",
+    "História",
+    "Matematica",
+    "Português",
+    "Química"
 ]
 
 function pageLanding (req, res) {
@@ -26,7 +49,8 @@ function pageLanding (req, res) {
 }
 
 function pageStudy (req, res) {
-    return res.render("study.html", { proffys })
+    const filters = req.query
+    return res.render("study.html", { proffys, filters, subjects })
 }
 
 function pageGiveClasses (req, res) {
