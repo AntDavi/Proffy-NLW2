@@ -1,3 +1,5 @@
+//Ddos
+
 const proffys = [
     {
         name: "Anthony Davi", 
@@ -44,23 +46,37 @@ const subjects = [
     "Química"
 ]
 
+const weekdays = [
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-Feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado"
+]
+
+//Funcionalidades
+
 function pageLanding (req, res) {
     return res.render("index.html")
 }
 
 function pageStudy (req, res) {
     const filters = req.query
-    return res.render("study.html", { proffys, filters, subjects })
+    return res.render("study.html", { proffys, filters, subjects, weekdays })
 }
 
 function pageGiveClasses (req, res) {
-    return res.render("give-classes.html")
+    return res.render("give-classes.html", {subjects, weekdays})
 }
+
+//Servidor
 
 const express = require('express')
 const server = express()
 
-//configurar nunjuncks
+//configurar nunjuncks (template engine)
 const nunjucks = require('nunjucks')
 nunjucks.configure('src/views', {
     express: server,
@@ -76,4 +92,6 @@ server
 .get('/', pageLanding)
 .get('/study', pageStudy)
 .get('/give-classes', pageGiveClasses)
+
+//Start do servidor
 .listen(5500)
